@@ -12,6 +12,7 @@ class Solution {
 
 
     // we initializing the dfs method here..
+    // step 1 : we used dfs method find each possibility
 
     void dfs( vector<int>& candidates, int target,int index, vector<int>&current ){
 
@@ -29,6 +30,7 @@ class Solution {
       // we use loop here. we check the every single combination with
       // every single value. value - index | current combination | present target
 
+      // Step 2 : build all the combination here
       for (int i = index ; i< candidates.size(); i++){
              current.push_back(candidates[i]);
              dfs(candidates, target - candidates[i],i, current);
@@ -39,7 +41,7 @@ class Solution {
 
 
     }
-
+        // Step 3 : start the programe
      vector <vector<int>> combinationsum (vector<int>&candidates, int target){
              vector <int> current;
              dfs(candidates, target, 0 , current );
@@ -48,10 +50,8 @@ class Solution {
 
      }
 
-
-
-
 };
+   // Step 4 : passing the actual values to it..
 
 int main() {
     Solution sol;
